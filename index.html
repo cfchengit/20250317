@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>海葵動畫與嵌入 iframe</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    #canvas-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2; /* 設定 canvas 在上層 */
+      pointer-events: none; /* 讓 canvas 不阻擋操作 */
+    }
+    iframe {
+      width: 80vw; /* 視窗寬度 */
+      height: 80vh; /* 視窗高度 */
+      border: none; /* 移除邊框 */
+      z-index: 1; /* 設定 iframe 在下層 */
+      position: absolute;
+      top: 10%;
+      left: 10%;
+    }
+  </style>
+</head>
+<body>
+  <iframe src="https://www.et.tku.edu.tw" title="Tamkang University"></iframe>
+  <div id="canvas-container"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <script src="sketch.js"></script>
+</body>
+</html>
